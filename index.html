@@ -6,28 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/3.png" type="image/x-icon">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <title>MineBot - Your Virtual Legal AI Advisor</title>
 </head>
 
 <body>
-    <header class="header">
-        <nav>
-            <div class="logo">
-                <a href="/">
-                    <img src="assets/2.png" alt="Minebot Logo">
+    <div class="nav-parent">
+        <div class="nav-wrapper">
+            <div class="branding">
+                <a href="#">
+                    <img src="assets/2.png" alt="">
                 </a>
             </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            <ul class="menu">
+
+            <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about-section">About</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">FAQs</a></li>
-                <li><a href="#">Trial</a></li>
+                <li><a href="#">Trail</a></li>
             </ul>
-        </nav>
-    </header>
-</body>
 
+            <a class="burger" onclick="burgerButton()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="burger-links">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Trail</a></li>
+        </ul>
+    </div>
+
+    <div class="home-section">
+        <div class="home-hero">
+        </div>
+
+        <h1>
+            NAVIGATING SAFETY: ENSURING THE WELL-BEING OF OUR MINERS.
+        </h1>
+
+        <a href="#">Learn More</a>
+    </div>
+
+    <div class="about-section" id="about-section">
+        <div class="about-description">
+            <h1>ABOUT US</h1>
+            <p>
+                "We're a regulatory hub dedicated to fostering safe mining practices. With a focus on compliance and efficiency, our chatbot offers a range of regulatory guidance and information to ensure miners operate within legal boundaries. Let's navigate the rules together to ensure your mining operations run smoothly and responsibly."
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1586161148512-64a1b3dac527?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="img">
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
 </html>
