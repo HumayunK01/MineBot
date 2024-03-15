@@ -240,6 +240,10 @@ a {
 
 /* ========== Responsive CSS Code for Home and About Section ========== */
 @media (max-width: 768px) {
+    .circle {
+        display: none;
+    }
+    
     body.active {
         overflow: hidden;
     }
