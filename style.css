@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+@import url(https://fonts.googleapis.com/css?family=Forum:regular);
+@import url(https://fonts.googleapis.com/css?family=Caudex:regular,italic,700,700italic);
 
 /* ========== Globally Initialized ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caudex", sans-serif;
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
@@ -118,7 +119,7 @@ a {
 }
 
 .nav-parent .nav-wrapper .branding a img {
-    width: 140px;
+    width: 40%;
 }
 
 .nav-wrapper ul li a::after {
@@ -177,7 +178,7 @@ a {
     display: grid;
     place-items: center;
     position: relative;
-    margin-top: 10rem;
+    margin-top: 14rem;
 }
 
 .home-section h1 {
@@ -256,6 +257,10 @@ a {
         display: none;
     }
 
+    .nav-parent .nav-wrapper .branding a img {
+        width: 40%;
+    }
+
     .burger {
         display: flex;
         justify-content: space-between;
@@ -267,6 +272,12 @@ a {
 
     .burger-links {
         display: flex;
+    }
+
+    .burger-links.active ul{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .about-section {
@@ -344,15 +355,9 @@ a {
 
     :root {
         --marquee-width: 100vw;
-        --marquee-height: 16vh;
-        --marquee-elements-displayed: 3;
+        --marquee-height: 12vh;
+        --marquee-elements-displayed: 4;
     }
-
-    .marquee:before,
-    .marquee:after {
-        width: 5rem;
-    }
-}
 
 @media (max-width: 768px) {
     .marquee-content li {
