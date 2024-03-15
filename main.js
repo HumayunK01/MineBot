@@ -1,3 +1,11 @@
+// ========== Scroll Reveal ==========
+ScrollReveal({ reset: true });
+ScrollReveal().reveal('.home-section', { easing:"ease-in", delay: 300});
+ScrollReveal().reveal('.about-description', { easing:"ease-in", delay: 300});
+ScrollReveal().reveal('.about-image', { easing:"ease-in", delay: 300});
+ScrollReveal().reveal('.marquee-content', { easing:"ease-in", delay: 300});
+ScrollReveal().reveal('.footer', { easing:"ease-in", delay: 300});
+
 // ========== Custom Cursor ==========
 const circleElement = document.querySelector('.circle');
 
@@ -100,4 +108,4 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 
 for (let i = 0; i < marqueeElementsDisplayed; i++) {
     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-}
+}   
