@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
 
+/* ========== Globally Initialized ========== */
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +11,18 @@
     scroll-behavior: smooth;
 }
 
+/* ========== General Classes of CSS ========== */
 :root {
     --main-color: #000;
     --secondary-color: #fff;
-    --bg-color: #000;
     --marquee-width: 100%;
     --marquee-height: 20vh;
-    /* --marquee-elements: 12; */
-    /* defined with JavaScript */
     --marquee-elements-displayed: 5;
     --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
     --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
 }
 
-/* Styles for the custom scrollbar */
+/* ========== Styles for the custom scrollbar ========== */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -40,24 +39,67 @@
     background: #111;
 }
 
+/* ========== Custom Cursor CSS Code ========== */
+.circle {
+    --circle-size: 40px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid var(--secondary-color);
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* ========== Basic CSS Code ========== */
 body {
-    background: var(--bg-color);
+    background: var(--main-color);
 }
 
 a {
-    text-decoration: none;
     color: var(--secondary-color);
 }
 
-ul {
-    list-style: none;
+/* ========== Theme Changer CSS Code ========== */
+.element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.onOff {
+    display: flex;
+    height: 30px;
+    width: 50px;
+    border-radius: 20px;
+    background-clip: border-box;
+    background-color: var(--secondary-color);
+    justify-content: flex-start;
+}
+
+.clickOnOrOff {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background: var(--main-color);
+    opacity: 0.6;
+    transition: all 0.5s cubic-bezier(0.32, 0.58, 0.12, 0.97);
+}
+
+.d-right {
+    transform: translateX(20px);
+    opacity: 1;
+}
+
+/* ========== Navigation Bar CSS Code ========== */
 .nav-parent {
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .nav-wrapper {
@@ -65,7 +107,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
-    background: var(--bg-color);
+    background: var(--main-color);
 }
 
 .nav-wrapper ul {
@@ -92,6 +134,7 @@ ul {
     width: 100%;
 }
 
+/* ========== Navigation Bar for Mobile Devices CSS Code ========== */
 .burger {
     display: none;
 }
@@ -120,7 +163,7 @@ ul {
     height: 100vh;
     position: fixed;
     z-index: 2;
-    background: var(--bg-color);
+    background: var(--main-color);
     top: -100%;
     transition: all 0.3s ease;
 }
@@ -129,6 +172,7 @@ ul {
     top: 0%;
 }
 
+/* ========== Home Page/Section CSS Code ========== */
 .home-section {
     display: grid;
     place-items: center;
@@ -143,9 +187,6 @@ ul {
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(to right, #ffffff, #00000000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .home-section a {
@@ -166,6 +207,7 @@ ul {
     width: clamp(300px, 40vw, 500px);
 }
 
+/* ========== About Page/Section CSS Code ========== */
 .about-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -196,6 +238,7 @@ ul {
     object-fit: cover;
 }
 
+/* ========== Responsive CSS Code for Home and About Section ========== */
 @media (max-width: 768px) {
     body.active {
         overflow: hidden;
@@ -235,11 +278,12 @@ ul {
     }
 }
 
+/* ========== Marquee CSS Code ========== */
 .marquee {
     width: var(--marquee-width);
     height: var(--marquee-height);
-    background-color: #000;
-    color: #eee;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
     overflow-x: hidden;
     position: relative;
 }
@@ -254,16 +298,6 @@ ul {
     z-index: 1;
 }
 
-.marquee:before {
-    left: 0;
-    background: linear-gradient(to right, #000 0%, transparent 100%);
-}
-
-.marquee:after {
-    right: 0;
-    background: linear-gradient(to left, #000 0%, transparent 100%);
-}
-
 .marquee-content {
     list-style: none;
     height: 100%;
@@ -271,9 +305,6 @@ ul {
     animation: scrolling var(--marquee-animation-duration) linear infinite;
 }
 
-/* .marquee-content:hover {
-  animation-play-state: paused;
-} */
 @keyframes scrolling {
     0% {
         transform: translateX(0);
@@ -288,21 +319,20 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     flex-shrink: 0;
     width: var(--marquee-element-width);
     max-height: 100%;
-    font-size: calc(var(--marquee-height)*3/4);
-    /* 5rem; */
+    font-size: calc(var(--marquee-height) * 3 / 4);
     white-space: nowrap;
+    opacity: .5;
 }
 
 .marquee-content li img {
     width: 100%;
-    /* height: 100%; */
-    border: 2px solid #eee;
+    border: 2px solid var(--secondary-color);
 }
 
+/* ========== Responsive Marquee CSS Code ========== */
 @media (max-width: 600px) {
     html {
         font-size: 12px;
@@ -324,8 +354,7 @@ ul {
     .marquee-content li {
         width: var(--marquee-element-width);
         max-height: 100%;
-        font-size: calc(var(--marquee-height)*2/4);
-        /* 5rem; */
+        font-size: calc(var(--marquee-height) * 2 / 4);
         white-space: nowrap;
     }
 }
