@@ -355,7 +355,7 @@ a {
 
     :root {
         --marquee-width: 100vw;
-        --marquee-height: 12vh;
+        --marquee-height: 10vh;
         --marquee-elements-displayed: 4;
     }
 
@@ -366,4 +366,5 @@ a {
         font-size: calc(var(--marquee-height) * 2 / 4);
         white-space: nowrap;
     }
+}
 }
