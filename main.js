@@ -1,11 +1,3 @@
-// ========== Scroll Reveal ==========
-ScrollReveal({ reset: true });
-ScrollReveal().reveal('.home-section', { easing:"ease-in", delay: 300});
-ScrollReveal().reveal('.about-description', { easing:"ease-in", delay: 300});
-ScrollReveal().reveal('.about-image', { easing:"ease-in", delay: 300});
-ScrollReveal().reveal('.marquee-content', { easing:"ease-in", delay: 300});
-ScrollReveal().reveal('.footer', { easing:"ease-in", delay: 300});
-
 // ========== Custom Cursor ==========
 const circleElement = document.querySelector('.circle');
 
@@ -71,6 +63,24 @@ const tick = () => {
 // Start the animation loop
 tick();
 
+// ========== Back to Top Code ==========
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 300) {
+        document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("backToTopBtn").style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+
 // ========== Navigation Burger Links Code ==========
 const burgerLinks = document.querySelector('.burger-links');
 const burger = document.querySelector('.burger');
@@ -108,4 +118,4 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 
 for (let i = 0; i < marqueeElementsDisplayed; i++) {
     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-}   
+}

@@ -94,6 +94,29 @@ a {
     opacity: 1;
 }
 
+/* ========== Back to Top CSS Code ========== */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: all ease-in-out .3s;
+}
+
+#backToTopBtn:hover {
+    transform: translateY(-10px);
+}
+
 /* ========== Navigation Bar CSS Code ========== */
 .nav-parent {
     width: 100%;
@@ -244,7 +267,7 @@ a {
     .circle {
         display: none;
     }
-    
+
     body.active {
         overflow: hidden;
     }
@@ -274,7 +297,7 @@ a {
         display: flex;
     }
 
-    .burger-links.active ul{
+    .burger-links.active ul {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -359,108 +382,112 @@ a {
         --marquee-elements-displayed: 4;
     }
 
-@media (max-width: 768px) {
-    .marquee-content li {
-        width: var(--marquee-element-width);
-        max-height: 100%;
-        font-size: calc(var(--marquee-height) * 2 / 4);
-        white-space: nowrap;
+    @media (max-width: 768px) {
+        .marquee-content li {
+            width: var(--marquee-element-width);
+            max-height: 100%;
+            font-size: calc(var(--marquee-height) * 2 / 4);
+            white-space: nowrap;
+        }
     }
-}
 }
 
 .footer {
-	background-color: var(--main-color);
-	padding: 70px 0;
+    background-color: var(--main-color);
+    padding: 50px 20px;
 }
 
 .container {
-	max-width: 1370px;
-	margin: auto;
+    max-width: 1370px;
+    margin: auto;
 }
 
 .row {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 ul {
-	list-style: none;
+    list-style: none;
 }
 
 .footer-col {
-	width: 25%;
-	padding: 0 15px;
+    width: 25%;
+    padding: 0 15px;
 }
 
 .footer-col h4 {
-	font-size: 22px;
-	color: var(--secondary-color);
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
+    font-size: 22px;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
     text-transform: uppercase;
 }
 
 .footer-col h4::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	background-color: var(--secondary-color);
-	width: 50px;
-	height: 2px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--secondary-color);
+    width: 50px;
+    height: 2px;
 }
 
 .footer-col ul li:not(:last-child) {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .footer-col ul li a {
-	color: var(--secondary-color);
-	display: block;
-	font-size: 1.1rem;
-	font-weight: 500;
-	text-transform: capitalize;
-	text-decoration: none;
-	transition: all 0.3s ease;
+    color: var(--secondary-color);
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.3s ease;
     opacity: .7;
 }
 
 .footer-col ul li a:hover {
-	color: var(--secondary-color);
-	padding-left: 7px;
+    color: var(--secondary-color);
+    padding-left: 7px;
     opacity: 1;
 }
 
 .footer-col .social-links a {
-	color: var(--secondary-color);
-	background-color: rgba(255, 255, 255, 0.2);
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	text-align: center;
-	margin: 0 10px 10px 0;
-	line-height: 40px;
-	transition: all 0.5s ease;
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    line-height: 40px;
+    transition: all 0.5s ease;
 }
 
 .footer-col .social-links a:hover {
-	color: var(--main-color);
-	background-color: var(--secondary-color);
+    color: var(--main-color);
+    background-color: var(--secondary-color);
 }
 
 @media(max-width: 767px) {
-	.footer-col {
-		width: 50%;
-		margin-bottom: 30px;
-	}
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .footer-col ul li a {
+        font-size: 20px;
+    }
 }
 
 @media(max-width: 574px) {
-	.footer-col {
-		width: 100%;
-	}
+    .footer-col {
+        width: 100%;
+    }
 }
