@@ -141,6 +141,10 @@ a {
     gap: 1rem;
 }
 
+.nav-wrapper ul li a {
+    font-size: 20px;
+}
+
 .nav-parent .nav-wrapper .branding a img {
     width: 40%;
 }
@@ -392,12 +396,119 @@ a {
     }
 }
 
+/* ========== FAQs CSS Code ========== */
+.main-faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.main-faq h1 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    padding: 40px 0;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 95%;
+}
+
+details {
+    font-size: 1rem;
+    background: var(--main-color);
+    border-radius: 25px;
+    background-color: var(--main-color);
+    background-color: #11111150;
+    transition: border-color 0.3s ease-in-out;
+}
+
+summary {
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-title {
+    color: var(--secondary-color);
+    flex-grow: 1;
+    opacity: 0.75;
+    transition: opacity 250ms ease-in-out;
+    font-size: 18px;
+}
+
+summary:hover .faq-title {
+    opacity: 1;
+}
+
+.faq-content {
+    color: var(--secondary-color);
+    opacity: .9;
+    padding: 0.2em 1em 1em 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+details[open] .faq-content {
+    max-height: 1000px;
+}
+
+.expand-icon {
+    margin-left: auto;
+    transition: transform 150ms ease-out;
+}
+
+details[open] .icon-tabler-circle-plus {
+    display: none;
+}
+
+details:not([open]) .icon-tabler-circle-minus {
+    display: none;
+}
+
+/* Progressive Enhancements for larger screens */
+@media (max-width: 768px) {
+    .main-faq {
+        padding: 25px;
+    }
+
+    .faq-container {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .faq-title {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .faq-container {
+        width: 60%;
+    }
+}
+
+/* ========== Footer CSS Code ========== */
 .footer {
     background-color: var(--main-color);
     padding: 50px 20px;
 }
 
-.container {
+.fcontainer {
     max-width: 1370px;
     margin: auto;
 }
