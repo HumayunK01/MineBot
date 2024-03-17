@@ -212,5 +212,23 @@ function createAccordion(el) {
 
     summary.addEventListener('click', onClick);
 }
-
 document.querySelectorAll('details').forEach(createAccordion);
+
+// Hiding the source code using inspect element by disabling right click event:
+document.addEventListener(
+    "contextmenu",
+    (e) => {
+        e.preventDefault();
+        alert("Right Click Disabled - Contact Developer")
+    },
+    false
+);
+
+// Hiding the source code using “Ctrl+Shift+I”, “Ctrl+U” and ”F12”:
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.keyCode == 123) {
+        e.stopPropagation();
+        e.preventDefault();
+        alert("Ctrl Button Disabled - Contact Developer")
+    }
+});
