@@ -223,7 +223,6 @@ document.addEventListener(
     },
     false
 );
-
 // Hiding the source code using “Ctrl+Shift+I”, “Ctrl+U” and ”F12”:
 document.addEventListener("keydown", (e) => {
     if (e.ctrlKey || e.keyCode == 123) {
