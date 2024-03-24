@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Variable to store user's message
-const API_KEY = "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"; // Paste your API key here
+const API_KEY = ""; // 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
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -191,3 +191,21 @@ function onOff() {
         donen.style.setProperty("--main-color", "#fff");
     }
 }
+
+// Hiding the source code using inspect element by disabling right click event:
+document.addEventListener(
+    "contextmenu",
+    (e) => {
+        e.preventDefault();
+        alert("Right Click Disabled - Contact Developer")
+    },
+    false
+);
+// Hiding the source code using “Ctrl+Shift+I”, “Ctrl+U” and ”F12”:
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.keyCode == 123) {
+        e.stopPropagation();
+        e.preventDefault();
+        alert("Ctrl Button Disabled - Contact Developer")
+    }
+});
