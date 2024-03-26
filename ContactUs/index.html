@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the webpage -->
+    <title>Minebot | Contact Us</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="../assets/3.png" type="image/x-icon">
+    <!-- Link to Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="circle"></div>
+    <!-- ========== Navigation Bar Starts Here ========== -->
+    <div class="nav-parent">
+        <div class="nav-wrapper">
+            <!-- ========== Logo ========== -->
+            <div class="branding">
+                <a href="/">
+                    <img src="../assets/2.png" alt="Minebot Logo">
+                </a>
+            </div>
+            <!-- ========== Nav-Links ========== -->
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="../Services/index.html">Services</a></li>
+                <li><a href="../Team/index.html">Team</a></li>
+                <li><a href="../Chatbot/index.html">Chatbot</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <!-- ========== Theme Changer ========== -->
+                <div class="element">
+                    <div class="onOff" onclick="onOff()">
+                        <div class="clickOnOrOff"></div>
+                    </div>
+                </div>
+            </ul>
+            <!-- ========== Mobile Devices Nav-Tap ========== -->
+            <a class="burger" onclick="burgerButton()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </div>
+    </div>
+    <!-- ========== Mobile Devices Nav-Links ========== -->
+    <div class="burger-links">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../Services/index.html">Services</a></li>
+            <li><a href="../Team/index.html">Team</a></li>
+            <li><a href="../Chatbot/index.html">Chatbot</a></li>
+            <li><a href="index.html">Contact</a></li>
+            <!-- ========== Mobile Devices Theme Changer ========== -->
+            <div class="element">
+                <div class="onOff" onclick="onOff()">
+                    <div class="clickOnOrOff"></div>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <!-- Container for the form -->
+    <div class="container">
+        <div class="form">
+            <!-- Contact information section -->
+            <div class="contact-info">
+                <!-- Title -->
+                <h3 class="title">Let's get in touch</h3>
+                <!-- Text describing the purpose -->
+                <p class="text">
+                    Whether you have questions, ideas, or simply want to discuss potential collaborations, we're here to
+                    engage in meaningful conversations.
+                </p>
+
+                <!-- Contact details -->
+                <div class="info">
+                    <!-- Individual contact detail -->
+                    <div class="information">
+                        <!-- Icon for location -->
+                        <i class="fas fa-map-marker-alt"></i> &nbsp&nbsp
+                        <!-- Address -->
+                        <p>Millenium Business Park, Navi Mumbai</p>
+                    </div>
+                    <!-- Individual contact detail -->
+                    <div class="information">
+                        <!-- Icon for email -->
+                        <i class="fas fa-envelope"></i> &nbsp&nbsp
+                        <!-- Email address -->
+                        <p>minebot.pvt@gmail.com</p>
+                    </div>
+                    <!-- Individual contact detail -->
+                    <div class="information">
+                        <!-- Icon for website -->
+                        <i class="fas fa-globe"></i>&nbsp&nbsp
+                        <!-- Website URL -->
+                        <p>minerbot.vercel.app</p>
+                    </div>
+                </div>
+
+                <!-- Social media links -->
+                <div class="social-media">
+                    <!-- Text -->
+                    <p>Connect with us :</p>
+                    <!-- Icons linking to social media profiles -->
+                    <div class="social-icons">
+                        <!-- Instagram link -->
+                        <a href="https://www.instagram.com/theminerbot/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- Telegram link -->
+                        <a href="https://t.me/MinnersActbot" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact form section -->
+            <div class="contact-form">
+                <!-- Form for submitting contact details -->
+                <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+                    <!-- Title for the form -->
+                    <h3 class="title">Contact us</h3>
+                    <!-- Hidden input field for access key -->
+                    <input type="hidden" name="access_key" value="785558f9-6d10-43ad-b17d-4f7a6516c254">
+                    <!-- Input field for name -->
+                    <div class="input-container">
+                        <input type="text" name="name" class="input" required />
+                        <label for="">Name</label>
+                        <span>Name</span>
+                    </div>
+                    <!-- Input field for email -->
+                    <div class="input-container">
+                        <input type="email" name="email" class="input" required />
+                        <label for="">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <!-- Textarea for message -->
+                    <div class="input-container textarea">
+                        <textarea name="message" class="input" required></textarea>
+                        <label for="">Message</label>
+                        <span>Message</span>
+                    </div>
+                    <!-- Submit button -->
+                    <input type="submit" value="Send" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ========== Footer Section Starts Here ========== -->
+    <footer class="footer">
+        <div class="fcontainer row">
+            <div class="footer-col">
+                <h4>Minebot</h4>
+                <ul>
+                    <li><a href="../Services/index.html">our services</a></li>
+                    <li><a href="../Team/index.html">our team</a></li>
+                    <li><a href="https://www.msha.gov/" target="_blank">Website</a></li>
+                    <li><a href="../Chatbot/index.html">Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="https://forms.gle/Azsy4Y3GuDPeyqQBA" target="_blank">feedback</a></li>
+                    <li><a href="assets/PrivacyPolicy.pdf">Privacy Policy</a></li>
+                    <li><a href="index.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Open Source</h4>
+                <ul>
+                    <li><a href="https://github.com/HumayunK01/MineBot/commits/main" target="_blank">Commits</a></li>
+                    <li><a href="https://github.com/HumayunK01/MineBot" target="_blank">Github</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect with us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/theminerbot/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:minebot.pvt@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://t.me/MinnersActbot" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
