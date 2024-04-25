@@ -82,6 +82,7 @@ function scrollToTop() {
 
 
 // ========== Navigation Burger Links Code ==========
+var burgerButton;
 const burgerLinks = document.querySelector('.burger-links');
 const burger = document.querySelector('.burger');
 const body = document.querySelector('body');
