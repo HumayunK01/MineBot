@@ -402,7 +402,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .main-faq h1 {
@@ -600,5 +600,131 @@ ul {
 @media(max-width: 574px) {
     .footer-col {
         width: 100%;
+    }
+}
+
+/* Testimonials Sections Starts Here */
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    border-radius: 15px;
+    margin: 100px auto;
+    padding: 50px 80px;
+    width: 800px;
+    min-height: 430px;
+    position: relative;
+}
+
+.stars {
+    font-size: 14px;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 900;
+    height: 100%;
+    line-height: 28px;
+    margin: 0;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user .user-image {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+.user .user-details {
+    text-align: center;
+}
+
+.user .username {
+    margin: 0;
+    font-size: 14px;
+}
+
+.user .role {
+    margin: 0;
+    font-size: 12px;
+}
+
+.progress-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.progress-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.progress-dot.active {
+    background-color: #555;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: #eee;
+}
+
+#btn-prev {
+    left: 25px;
+}
+
+#btn-next {
+    right: 25px;
+}
+
+@media (max-width: 600px) {
+    .testimonial-container {
+        padding: 50px 20px;
+        width: auto;
+        min-height: 430px;
+        position: relative;
+        margin: 40px;
+    }
+
+    #btn-next {
+        top: 285px;
+    }
+
+    #btn-prev {
+        top: 285px;
+    }
+
+    .stars {
+        font-size: 20px;
     }
 }

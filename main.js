@@ -215,20 +215,87 @@ function createAccordion(el) {
 }
 document.querySelectorAll('details').forEach(createAccordion);
 
-// Hiding the source code using inspect element by disabling right click event:
-document.addEventListener(
-    "contextmenu",
-    (e) => {
-        e.preventDefault();
-        alert("Right Click Disabled - Contact Developer")
-    },
-    false
-);
-// Hiding the source code using “Ctrl+Shift+I”, “Ctrl+U” and ”F12”:
-document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey || e.keyCode == 123) {
-        e.stopPropagation();
-        e.preventDefault();
-        alert("Ctrl Button Disabled - Contact Developer")
-    }
+// Testimonials Sections Starts Here
+const testimonialsContainer = document.querySelector(".testimonials-container");
+const testimonial = document.querySelector(".testimonial");
+const userImage = document.querySelector(".user-image");
+const username = document.querySelector(".username");
+const role = document.querySelector(".role");
+const btnPrev = document.getElementById("btn-prev");
+const btnNext = document.getElementById("btn-next");
+const progressDots = document.getElementById("progress-dots");
+
+const testimonials = [
+  {
+    name: "Zafar Khan",
+    position: "Professor",
+    photo: "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
+    text:
+      "I'm fully satisfied are you with the overall performance of the chatbot. Yes,  the chatbot adequately addressed questions or concerns related to mining and I was able to easily navigate and interact with the chatbot on the website"
+  },
+  {
+    name: "Ansari Zoha",
+    position: "End-User",
+    photo: "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
+    text:
+      "Personalizing chatbot interactions is a powerful way to improve the user experience by providing users with personalized responses, conversation flow and options that are relevant and interesting to them."
+  },
+  {
+    name: "Dr. Haya Shadab Usmani",
+    position: "End-User",
+    photo: "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
+    text:
+      "I'm fully satisfied are you with the overall performance of the chatbot and I was able to easily navigate and interact with the chatbot on the website"
+  },
+  {
+    name: "Aakash Yadav",
+    position: "End-User",
+    photo:
+      "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
+    text:
+      "Yes,  the chatbot adequately addressed questions or concerns related to mining and I was able to easily navigate and interact with the chatbot on the website"
+  }
+];
+
+let idx = 0;
+
+testimonials.forEach((testimonial) => {
+  const dot = document.createElement("div");
+  dot.classList.add("progress-dot");
+  progressDots.appendChild(dot);
 });
+
+function displayTestimonial() {
+  const { name, position, photo, text } = testimonials[idx];
+
+  testimonial.innerHTML = text;
+  userImage.src = photo;
+  username.innerHTML = name;
+  role.innerHTML = position;
+
+  updateProgressDots();
+}
+
+function updateProgressDots() {
+  const dots = progressDots.children;
+  [...dots].forEach((dot) => {
+    dot.classList.remove("active");
+  });
+  dots[idx].classList.add("active");
+}
+
+btnNext.addEventListener("click", () => {
+  idx === testimonials.length - 1 ? (idx = 0) : idx++;
+  console.log(idx);
+
+  displayTestimonial();
+});
+
+btnPrev.addEventListener("click", () => {
+  idx === 0 ? (idx = testimonials.length - 1) : idx--;
+  console.log(idx);
+
+  displayTestimonial();
+});
+
+displayTestimonial();
